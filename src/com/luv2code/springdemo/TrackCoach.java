@@ -5,6 +5,9 @@ public class TrackCoach implements Coach {
 	// define a private field for the dependency
 	private FortuneService fortuneService;
 	
+	public TrackCoach() {
+		
+	}
 	// define a constructor for the dependency injection
 	public TrackCoach(FortuneService theFortuneService) {
 		fortuneService = theFortuneService;
