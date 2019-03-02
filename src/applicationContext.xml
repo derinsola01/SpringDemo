@@ -8,6 +8,15 @@
 	http://www.springframework.org/schema/context/spring-beans.xsd">
 	
 	
+	<!-- load the sport.properties file -->
+	<bean 
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+
+		<property name="location">
+			<value>sport.properties</value>
+		</property>
+	</bean>
+	
 	<bean 	id="myFortuneService" 
 			class="com.luv2code.springdemo.HappyFortuneService">
 	</bean>
@@ -27,8 +36,8 @@
 			<property name="fortuneService" ref="myFortuneService" />
 			
 			<!-- Inject literal values -->
-			<property name="emailAddress" value="daireenonline@yahoo.com" />
-			<property name="team" value="Team 1 Shanghai" />
+			<property name="emailAddress" value="${foo.email}" />
+			<property name="team" value="${foo.team}" />
 	</bean>
 	
 </beans>
