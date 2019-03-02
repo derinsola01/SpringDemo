@@ -21,12 +21,19 @@
 			class="com.luv2code.springdemo.HappyFortuneService">
 	</bean>
 	
+	<bean 	id="myFortuneServiceImplementator" 
+			class="com.luv2code.springdemo.myFotuneServiceImpl">
+	</bean>
+	
 
 	<bean 	id="myCoach" 
 			class="com.luv2code.springdemo.BaseballCoach">
 			
-			<!-- set up constructor injection -->
-			<constructor-arg ref="myFortuneService" />
+			<!-- set up constructor injection  to print one fortune-->
+			<!-- <constructor-arg ref="myFortuneService" /> -->
+			
+			<!-- set up constructor injection to print random fortunes -->
+			<constructor-arg ref="myFortuneServiceImplementator" />
 	</bean>
 	
 	<bean 	id="myCricketCoach" 
